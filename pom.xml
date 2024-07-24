@@ -69,6 +69,29 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>2.43.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <ratchetFrom>origin/main</ratchetFrom>
+                    <java>
+                        <palantirJavaFormat>
+                        </palantirJavaFormat>
+                        <importOrder>
+                            <order>,java|javax,\#
+                            </order>
+                        </importOrder>
+                    </java>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
